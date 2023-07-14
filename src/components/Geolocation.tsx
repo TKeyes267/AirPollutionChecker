@@ -1,8 +1,17 @@
-import { Button, Card, Alert } from "react-bootstrap";
-import { useState } from "react";
+import { Button, Alert } from "react-bootstrap";
+import { useState, Dispatch, SetStateAction } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { getAirQuality } from "../utils/getAirquality";
 import userGeoLocation from "../utils/getUserLocation";
+import { dataAirQualityT } from "../utils/types";
+
+export interface Props {
+  setErrorPost: Dispatch<SetStateAction<boolean>>;
+  errorGeo: boolean;
+  setErrorGeo: Dispatch<SetStateAction<boolean>>;
+  setDataLoaded: Dispatch<SetStateAction<boolean>>;
+  setAirQualityData: Dispatch<SetStateAction<dataAirQualityT | undefined>>;
+}
 
 const Geolocation = ({
   setAirQualityData,
@@ -10,7 +19,7 @@ const Geolocation = ({
   errorGeo,
   setErrorGeo,
   setErrorPost,
-}) => {
+}: Props) => {
   const [errorGeoMsg, setGeoErrorMsg] = useState("");
 
   const userLocation = userGeoLocation();

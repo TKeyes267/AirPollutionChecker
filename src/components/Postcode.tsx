@@ -1,8 +1,16 @@
 import { Button, Form, Col, Row, Alert, FormLabel } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { getPostCode } from "../utils/getPostcode";
+import { useState, Dispatch, SetStateAction } from "react";
+import { dataAirQualityT } from "../utils/types";
 
-import { useState } from "react";
+export interface Props {
+  setErrorPost: Dispatch<SetStateAction<boolean>>;
+  errorPost: boolean;
+  setErrorGeo: Dispatch<SetStateAction<boolean>>;
+  setDataLoaded: Dispatch<SetStateAction<boolean>>;
+  setAirQualityData: Dispatch<SetStateAction<dataAirQualityT | undefined>>;
+}
 
 function Postcode({
   setAirQualityData,
@@ -10,7 +18,7 @@ function Postcode({
   errorPost,
   setErrorPost,
   setErrorGeo,
-}) {
+}: Props) {
   const [errorPostcodeMsg, setPostcodeErrorMsg] = useState("");
 
   const handleSubmit = (event: any) => {
