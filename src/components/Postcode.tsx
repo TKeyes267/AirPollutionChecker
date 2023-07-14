@@ -1,44 +1,63 @@
-import { Button, Form, Card } from "react-bootstrap";
+import { Button, Form, Col, Row, Alert, FormLabel } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { getPostCode } from "../utils/getPostcode";
-import { getAirQuality } from "../utils/getAirquality";
+
 import { useState } from "react";
 
-const Postcode = ({ setAirQualityData, setDataLoaded }) => {
-  const [postcodeCoordinates, setPostcodeCoordinates] = useState({});
+function Postcode({
+  setAirQualityData,
+  setDataLoaded,
+  errorPost,
+  setErrorPost,
+  setErrorGeo,
+}) {
+  const [errorPostcodeMsg, setPostcodeErrorMsg] = useState("");
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
 
     const postcode = event.target[0].value;
 
-    getPostCode(postcode).then((newCoordinates) => {
-      if (newCoordinates.loaded) {
-        setPostcodeCoordinates(newCoordinates);
-      }
-    });
-
-    getAirQuality(postcodeCoordinates).then((data) => {
-      setAirQualityData(data);
-      setDataLoaded(true);
-    });
+    getPostCode(postcode)
+      .then((data) => {
+        setAirQualityData(data);
+        setDataLoaded(true);
+        setErrorPost(false);
+        setErrorGeo(false);
+      })
+      .catch((e) => {
+        setErrorPost(true);
+        setPostcodeErrorMsg(
+          "Postcode can not be found, Please enter a valid Postcode"
+        );
+        console.log(e);
+      });
   };
 
   return (
-    <Card>
+    <section>
       <Form onSubmit={handleSubmit}>
-        <Form.Group>
-          <Form.Label>Search by Postcode</Form.Label>
-          <Form.Control type="postcode" placeholder="M4 7BG"></Form.Control>
-        </Form.Group>
-        <br></br>
-
-        <Button variant="primary" type="submit">
-          Search
-        </Button>
+        <FormLabel>Search by Postcode</FormLabel>
+        <Row>
+          <Col>
+            <Form.Group>
+              <Form.Control
+                type="postcode"
+                placeholder="Postcode"
+              ></Form.Control>
+            </Form.Group>
+          </Col>
+          <Col>
+            <Button variant="primary" type="submit">
+              Search
+            </Button>
+          </Col>
+        </Row>
       </Form>
-    </Card>
+      <br></br>
+      {errorPost ? <Alert variant="danger">{errorPostcodeMsg}</Alert> : null}
+    </section>
   );
-};
+}
 
 export default Postcode;
