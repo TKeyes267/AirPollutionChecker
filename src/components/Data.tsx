@@ -1,6 +1,12 @@
 import { Card, Row, Col } from "react-bootstrap";
+import { dataAirQualityT } from "../utils/types";
 
-const Data = ({ airQualityData }) => {
+export interface Props {
+  airQualityData: dataAirQualityT;
+}
+
+const Data = ({ airQualityData }: Props) => {
+  console.log(airQualityData);
   let aqiColor = "";
   let aqiTextColor = "";
   let aqiDescription = "";
