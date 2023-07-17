@@ -44,8 +44,10 @@ function Postcode({
 
   return (
     <section>
+      <br></br>
       <Form onSubmit={handleSubmit}>
-        <FormLabel>Search by Postcode</FormLabel>
+        <h4>Search by Postcode</h4>
+        <br></br>
         <Row>
           <Col>
             <Form.Group>
@@ -64,6 +66,7 @@ function Postcode({
       </Form>
       <br></br>
       {errorPost ? <Alert variant="danger">{errorPostcodeMsg}</Alert> : null}
+      <br></br>
     </section>
   );
 }

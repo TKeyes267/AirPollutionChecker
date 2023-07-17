@@ -31,6 +31,8 @@ const SearchPage = () => {
                 setErrorGeo={setErrorGeo}
               />
             </Col>
+          </Row>
+          <Row>
             <Col>
               <br></br>
               <Geolocation
