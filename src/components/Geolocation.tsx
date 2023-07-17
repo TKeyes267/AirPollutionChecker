@@ -1,4 +1,4 @@
-import { Button, Card, Alert } from "react-bootstrap";
+import { Button, Alert } from "react-bootstrap";
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { getAirQuality } from "../utils/getAirquality";
@@ -35,7 +35,8 @@ const Geolocation = ({
 
   return (
     <section>
-      <h4> Or show data from your current location</h4>
+      <h4> Search by Geolocation</h4>
+      <br></br>
       <Button variant="primary" type="submit" onClick={handleSubmit}>
         Show current location
       </Button>

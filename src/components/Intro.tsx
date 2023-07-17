@@ -4,7 +4,7 @@ const Intro = () => {
   return (
     <main className="IntroCard">
       <Card>
-        <h3>Discover the Air You Breathe</h3>
+        <h2>Discover the Air You Breathe</h2>
         <br></br>
         <p>
           Welcome to our air pollution checking app, where you can stay informed
@@ -15,7 +15,7 @@ const Intro = () => {
           concerned about allergies, respiratory issues, or simply want to stay
           informed, our app is your reliable companion.
         </p>
-        <h5>Stay Informed, Stay Healthy!</h5>
+        <h3>Stay Informed, Stay Healthy!</h3>
       </Card>
     </main>
   );

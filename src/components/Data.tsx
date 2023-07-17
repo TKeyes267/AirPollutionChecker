@@ -1,4 +1,4 @@
-import { Card, Row, Col } from "react-bootstrap";
+import { Card, Row, Col, Container } from "react-bootstrap";
 
 const Data = ({ airQualityData }) => {
   let aqiColor = "";
@@ -187,13 +187,13 @@ const Data = ({ airQualityData }) => {
     <>
       <Card className="Data">
         <Row>
-          <Col>
+          <Col md={6}>
             <h3 className="Location">
               {airQualityData.name}, {airQualityData.state},{" "}
               {airQualityData.country}
             </h3>
           </Col>
-          <Col>
+          <Col md={6}>
             <h3
               className="AQI"
               style={{ background: aqiColor, color: aqiTextColor }}
@@ -203,7 +203,7 @@ const Data = ({ airQualityData }) => {
           </Col>
         </Row>
 
-        <section className="DataList">
+        <Container className="DataList">
           <Row className="DataRow">
             <Col className="DataEntry">
               <p className="datatext"> Carbon Monoxide </p>
@@ -282,7 +282,7 @@ const Data = ({ airQualityData }) => {
               </p>
             </Col>
           </Row>
-        </section>
+        </Container>
       </Card>
     </>
   );
