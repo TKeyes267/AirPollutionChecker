@@ -8,7 +8,9 @@ import { dataAirQualityT } from "../utils/types";
 import ResultsInfo from "./ResultsInfo";
 
 const SearchPage = () => {
-  const [airQualityData, setAirQualityData] = useState<dataAirQualityT>();
+  const [airQualityData, setAirQualityData] = useState<
+    dataAirQualityT | undefined
+  >();
 
   const [dataLoaded, setDataLoaded] = useState(false);
   const [errorPost, setErrorPost] = useState(false);
