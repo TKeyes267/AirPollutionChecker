@@ -16,15 +16,21 @@ export const getPostCode = (postcode: any) => {
       return postcodeLocation;
     })
     .then((location) => {
-      const APIkey = "02ed9996e52cb11e956b364b7af87bff";
-
       return axios
         .all([
           axios.get(
-            `http://api.openweathermap.org/data/2.5/air_pollution?lat=${location.coordinates.lat}&lon=${location.coordinates.lng}&appid=${APIkey}`
+            `https://api.openweathermap.org/data/2.5/air_pollution?lat=${
+              location.coordinates.lat
+            }&lon=${location.coordinates.lng}&appid=${
+              import.meta.env.VITE_API_KEY
+            }`
           ),
           axios.get(
-            `http://api.openweathermap.org/geo/1.0/reverse?lat=${location.coordinates.lat}&lon=${location.coordinates.lng}&limit=5&appid=${APIkey}`
+            `https://api.openweathermap.org/geo/1.0/reverse?lat=${
+              location.coordinates.lat
+            }&lon=${location.coordinates.lng}&limit=5&appid=${
+              import.meta.env.VITE_API_KEY
+            }`
           ),
         ])
 
