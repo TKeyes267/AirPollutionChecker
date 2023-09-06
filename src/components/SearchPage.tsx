@@ -29,8 +29,7 @@ const SearchPage = () => {
                 setErrorGeo={setErrorGeo}
               />
             </Col>
-          </Row>
-          <Row>
+
             <Col>
               <br></br>
               <Geolocation
@@ -55,28 +54,32 @@ const SearchPage = () => {
         </Row>
         <Row>
           <Col>
-            <Card className="SearchCard">
-              <h3 className="subHeader">Search for Air Quality Data</h3>
-              <Postcode
-                setAirQualityData={setAirQualityData}
-                setDataLoaded={setDataLoaded}
-                errorPost={errorPost}
-                setErrorPost={setErrorPost}
-                setErrorGeo={setErrorGeo}
-              />
+            <Card>
+              <div className="SearchCard">
+                <h3 className="subHeader">Search for Air Quality Data</h3>
+                <Postcode
+                  setAirQualityData={setAirQualityData}
+                  setDataLoaded={setDataLoaded}
+                  errorPost={errorPost}
+                  setErrorPost={setErrorPost}
+                  setErrorGeo={setErrorGeo}
+                />
 
-              <Geolocation
-                setAirQualityData={setAirQualityData}
-                setDataLoaded={setDataLoaded}
-                errorGeo={errorGeo}
-                setErrorGeo={setErrorGeo}
-                setErrorPost={setErrorPost}
-              />
+                <Geolocation
+                  setAirQualityData={setAirQualityData}
+                  setDataLoaded={setDataLoaded}
+                  errorGeo={errorGeo}
+                  setErrorGeo={setErrorGeo}
+                  setErrorPost={setErrorPost}
+                />
+              </div>
             </Card>
           </Col>
           <Col>
-            <Card className="InfoCard">
-              <ResultsInfo />
+            <Card>
+              <div className="InfoCard">
+                <ResultsInfo />
+              </div>
             </Card>
           </Col>
         </Row>

@@ -19,9 +19,6 @@
 
 .card {
   padding: 1em;
-  margin-left: 1em;
-  margin-right: 1em;
-  margin-bottom: 1em;
 }
 
 .body {
@@ -29,6 +26,9 @@
 
   background-color: lightgray;
   background-size: cover;
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-bottom: 1em;
 }
 
 .Location {
@@ -49,21 +49,22 @@
 }
 
 .Data {
-  /* margin-bottom: 0em; */
-  padding: 1em;
+  margin-bottom: 1em;
+  /* width: 60%;
+  display: flex;
+  justify-content: center; */
 }
 
 .DataList {
   padding: 1em;
   padding-bottom: 0.5em;
-  margin: 0.5em;
 
   min-width: 100%;
   max-width: 100%;
 
   align-self: center;
   border-radius: 5px;
-  background-color: lightgrey;
+  background-color: lightgray;
 }
 
 .DataRow {
@@ -71,11 +72,13 @@
 }
 
 .DataEntry {
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   text-align: center;
   padding: 0.5em;
   margin: 0.5em;
   border-radius: 5px;
+  width: fit-content;
+  flex-wrap: wrap;
 }
 
 .box {
@@ -98,4 +101,16 @@ p {
 
   border-radius: 5px;
   text-align: center;
+}
+
+.SearchCard {
+  padding: 1em;
+}
+
+.InfoCard {
+  padding-left: 0em;
+}
+
+.IntroCard {
+  margin-bottom: 1em;
 }

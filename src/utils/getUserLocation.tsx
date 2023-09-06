@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const userGeoLocation = () => {
   const [userLocation, setUserLocation] = useState({
@@ -16,9 +16,7 @@ const userGeoLocation = () => {
     });
   };
 
-  useEffect(() => {
-    navigator.geolocation.getCurrentPosition(onSuccess);
-  }, []);
+  navigator.geolocation.getCurrentPosition(onSuccess);
 
   return userLocation;
 };

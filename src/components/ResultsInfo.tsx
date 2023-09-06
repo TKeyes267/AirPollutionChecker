@@ -3,9 +3,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const ResultsInfo = () => {
   return (
-    <section>
+    <div className="infoBox">
       <h3 className="subHeader">Pollutants Infomation</h3>
-      <br></br>
+
       <Accordion>
         <Accordion.Item eventKey="0">
           <Accordion.Header>Carbon monoxide (CO)</Accordion.Header>
@@ -49,7 +49,7 @@ const ResultsInfo = () => {
           </Accordion.Body>
         </Accordion.Item>
       </Accordion>
-    </section>
+    </div>
   );
 };
 

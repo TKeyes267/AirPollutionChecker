@@ -190,8 +190,8 @@ const Data = ({ airQualityData }: Props) => {
       so2Description = "Very Poor";
     }
     return (
-      <>
-        <Card className="Data">
+      <div className="Data">
+        <Card>
           <Row>
             <Col md={6}>
               <h3 className="Location">
@@ -204,13 +204,13 @@ const Data = ({ airQualityData }: Props) => {
                 className="AQI"
                 style={{ background: aqiColor, color: aqiTextColor }}
               >
-                Air Quality Index : {aqiDescription}{" "}
+                Air Quality : {aqiDescription}{" "}
               </h3>
             </Col>
           </Row>
 
           <Container className="DataList">
-            <Row className="DataRow">
+            <Row>
               <Col className="DataEntry">
                 <p className="datatext"> Carbon Monoxide </p>
               </Col>
@@ -251,7 +251,7 @@ const Data = ({ airQualityData }: Props) => {
             </Row>
             <Row className="DataRow">
               <Col className="DataEntry">
-                <p className="datatext"> Particulate matter 1.0 </p>
+                <p className="datatext"> PM 1.0 </p>
               </Col>
               <Col className="DataEntry">
                 <p className="datatext"> {airQualityData.pm10} μg/m3</p>
@@ -264,7 +264,7 @@ const Data = ({ airQualityData }: Props) => {
             </Row>
             <Row className="DataRow">
               <Col className="DataEntry">
-                <p className="datatext"> Particulate matter 2.5 </p>
+                <p className="datatext"> PM 2.5 </p>
               </Col>
               <Col className="DataEntry">
                 <p className="datatext"> {airQualityData.pm2_5} μg/m3</p>
@@ -290,7 +290,7 @@ const Data = ({ airQualityData }: Props) => {
             </Row>
           </Container>
         </Card>
-      </>
+      </div>
     );
   }
 };
