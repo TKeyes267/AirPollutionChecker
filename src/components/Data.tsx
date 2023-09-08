@@ -204,7 +204,7 @@ const Data = ({ airQualityData }: Props) => {
                 className="AQI"
                 style={{ background: aqiColor, color: aqiTextColor }}
               >
-                Air Quality : {aqiDescription}{" "}
+                Air Quality: {aqiDescription}{" "}
               </h3>
             </Col>
           </Row>
